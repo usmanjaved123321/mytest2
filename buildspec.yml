@@ -1,21 +1,22 @@
 version: 0.2
 
-phases: 
-  install: 
+phases:
+  install:
     runtime-versions:
-      nodejs: 18 
+      nodejs: 18
   pre_build:
-    command:
+    commands:
       - cd myapp
-      - echo Installing source NPM dependencies. . .
-      - npm install -g npm@20.10.0
-      - npm ci
+      - echo Installing source NPM dependencies...
+      - npm install
   build:
-    commands:      
+    commands:
+      - echo Build started on 'date'
       - npm run build
+
 artifacts:
   files:
     - '**/*'
-    #- "mytest/build/**/*"
-  base-directory: 'myapp/build'
+    #- "myapp/build/**/*"
+  base-directory: 'myapp4/build'
   #discard-paths: yes
