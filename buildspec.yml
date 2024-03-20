@@ -6,9 +6,9 @@ phases:
       nodejs: 18 
   pre_build:
     command:
-      - cd myapp
+      - cd ./myapp/
       - echo Installing source NPM dependencies. . .
-      - npm install
+      - npm install --f
   build:
     commands:
       - echo build started on 'date'
