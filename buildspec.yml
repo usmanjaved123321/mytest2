@@ -1,0 +1,21 @@
+version: 0.2
+
+phases: 
+  install: 
+    runtime-versions:
+      nodejs: 18 
+  pre_build:
+    command:
+      - cd mytest
+      - echo Installing source NPM dependencies. . .
+  build:
+    commands:
+      - echo build started on 'date'
+      - npm run build
+
+artifacts:
+  files:
+    - '**/*'
+    #- "mytest/build/**/*"
+  base-directory: 'mytest/build'
+  #discard-paths: yes
